@@ -1,0 +1,46 @@
+<div>
+
+  <div style="width: 100%; display: inline-flex;">
+    <h2>Mi Lista de producto</h2>
+    <button class="btn btn-primary" (click)="goToPay()" type="button" style="margin: auto;">
+      <i class="now-ui-icons business_money-coins"></i>
+      PAGAR <strong>{{ total }}</strong>
+    </button>
+  </div>
+
+  <div>
+
+    <ul class="list-group">
+      <li class="list-group-item item-product" *ngFor="let product of products">
+        <div style="width: 10%">
+          <img class="rounded-circle" [src]="product.image">
+        </div>
+        <div style="width: 40%">
+          <h5>{{ product.name }}</h5>
+          <p>$ {{ product.price }}</p>
+        </div>
+        <div style="width: 40%">
+          <div>
+            <span>Cantidad: </span>
+            <button class="btn btn-primary btn-icon btn-round" (click)="click_minus(product.id)" type="button">
+              <i class="now-ui-icons ui-1_simple-delete"></i>
+            </button>
+            <input id="quantity" min="0" pattern="[0-9]*" [readonly]="true"
+                   [(ngModel)]="product.quantity" [name]="product.name" type="number"/>
+            <button class="btn btn-primary btn-icon btn-round plus" (click)="click_plus(product.id, 99)" type="button">
+              <i class="now-ui-icons ui-1_simple-add"></i>
+            </button>
+          </div>
+          <p>Total: {{ product.quantity * product.price }}</p>
+        </div>
+        <div style="width: 10%">
+          <a (click)="removeItem(product)">
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+</div>

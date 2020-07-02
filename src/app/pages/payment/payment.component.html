@@ -1,0 +1,60 @@
+<div style="display: inline-flex;width: 100%;">
+
+  <div class="row-card">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Datos del comprador</h5>
+        <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+          <div class="input-group-prepend">
+                      <span class="input-group-text">
+                          <i class="fa fa-user-circle"></i>
+                      </span>
+          </div>
+          <input type="text" [(ngModel)]="name" class="form-control" placeholder="Nombre" (focus)="focus=true"
+                 (blur)="focus=false">
+        </div>
+
+        <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
+          <div class="input-group-prepend">
+                      <span class="input-group-text">
+                          <i class="fa fa-envelope"></i>
+                      </span>
+          </div>
+          <input type="text" [(ngModel)]="email" class="form-control" placeholder="Correo" (focus)="focus1=true"
+                 (blur)="focus1=false">
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg" type="submit" (click)="save()">Registrar pago</button>
+
+  </div>
+
+  <div class="row-card">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Productos a Pagar</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Factura</h6>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let product of products">{{ product.name }}
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            X <strong>{{product.quantity}}</strong> - TOTAL: <strong>${{ product.quantity * product.price }}</strong>
+          </li>
+          <li class="list-group-item" style="display: inline-flex;">TOTAL A PAGAR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp;
+            <strong style="text-align: right;width: 100%;">${{ total }}</strong></li>
+        </ul>
+        <!--
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+        -->
+      </div>
+    </div>
+
+  </div>
+
+</div>

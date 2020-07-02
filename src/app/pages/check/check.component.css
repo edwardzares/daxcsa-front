@@ -1,0 +1,86 @@
+.item-product{
+  display: inline-flex;
+}
+
+.item-product img{
+  width: 80px;
+  height: 80px;
+}
+
+.item-product div a {
+  cursor: pointer;
+  vertical-align: middle;
+  height: 80px;
+  display: table-cell;
+}
+
+/**   **************  */
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+  opacity: 1;
+}
+
+.number-input {
+  border: 1px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  /*height: 2rem;*/
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 1rem;
+  height: 2px;
+  background-color: #f4f5f8;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 4.25rem;
+  padding: .5rem;
+  border: solid #ddd;
+  border-width: 0 5px;
+  font-size: 1.6rem;
+  height: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#quantity{
+  width: 4em;
+  font-size: 16px;
+  font-family: unset;
+}

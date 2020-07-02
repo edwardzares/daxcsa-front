@@ -1,0 +1,11 @@
+.row-card{
+  margin: 20px;
+}
+
+.reg > .card{
+  width: 30%;
+}
+
+.pay > .card{
+  width: 50%;
+}
